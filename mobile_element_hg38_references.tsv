@@ -1,0 +1,5 @@
+type	path
+L1	https://raw.githubusercontent.com/markozecevic/raredisease_ref/refs/heads/main/rmsk_hg38_l1.bed
+SVA	https://raw.githubusercontent.com/markozecevic/raredisease_ref/refs/heads/main/rmsk_hg38_sva.bed
+ALU	https://raw.githubusercontent.com/markozecevic/raredisease_ref/refs/heads/main/rmsk_hg38_alu.bed
+HERV	https://raw.githubusercontent.com/markozecevic/raredisease_ref/refs/heads/main/rmsk_hg38_herv.bed
