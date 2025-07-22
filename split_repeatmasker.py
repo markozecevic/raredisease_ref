@@ -14,20 +14,28 @@ def categorize_repeat(repeat_class):
     repeat_class = repeat_class.upper()
     
     # SVA elements
-    if 'RETROPOSON/SVA' in repeat_class or repeat_class == 'SVA':
+    if repeat_class == 'RETROPOSON/SVA':
         return 'SVA'
     
     # ALU elements
-    if 'SINE/ALU' in repeat_class:
+    if repeat_class == 'SINE/ALU':
         return 'ALU'
+
+    # MIR elements
+    if repeat_class == 'SINE/MIR':
+        return 'MIR'
     
     # HERV elements (LTR retrotransposons)
-    if any(herv in repeat_class for herv in ['LTR/ERV1', 'LTR/ERV1?', 'LTR/ERVK', 'LTR/ERVL', 'LTR/ERVL-MaLR', 'LTR/ERVL?']):
+    if repeat_class in ['LTR/ERV1', 'LTR/ERV1?', 'LTR/ERVK', 'LTR/ERVL', 'LTR/ERVL-MaLR', 'LTR/ERVL?']:
         return 'HERV'
     
     # L1 elements (LINE-1)
-    if 'LINE/L1' in repeat_class:
+    if repeat_class == 'LINE/L1':
         return 'L1'
+
+    # L2 elements (LINE-2)
+    if repeat_class == 'LINE/L2':
+        return 'L2'
     
     # Return None for other repeat types
     return None
@@ -39,13 +47,13 @@ def split_repeatmasker_bed(input_file, output_prefix):
     
     # Open output files
     output_files = {}
-    for category in ['L1', 'SVA', 'ALU', 'HERV']:
+    for category in ['L1', 'L2', 'SVA', 'MIR', 'ALU', 'HERV']:
         filename = f"{output_prefix}_{category.lower()}.bed"
         output_files[category] = open(filename, 'w')
         print(f"Created output file: {filename}")
     
     # Counters for statistics
-    counters = {'L1': 0, 'SVA': 0, 'ALU': 0, 'HERV': 0, 'OTHER': 0}
+    counters = {'L1': 0, 'L2': 0, 'SVA': 0, 'MIR': 0, 'ALU': 0, 'HERV': 0, 'OTHER': 0}
     
     try:
         with open(input_file, 'r') as infile:
@@ -93,7 +101,7 @@ def split_repeatmasker_bed(input_file, output_prefix):
     for category, count in counters.items():
         print(f"{category}: {count:,} entries")
     
-    total_categorized = sum(counters[cat] for cat in ['L1', 'SVA', 'ALU', 'HERV'])
+    total_categorized = sum(counters[cat] for cat in ['L1', 'L2', 'SVA', 'MIR', 'ALU', 'HERV'])
     total_entries = total_categorized + counters['OTHER']
     print(f"Total categorized: {total_categorized:,} / {total_entries:,} ({100*total_categorized/total_entries:.1f}%)")
 
