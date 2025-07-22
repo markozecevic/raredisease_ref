@@ -1,24 +1,24 @@
 # Reference files for running the nf-core/raredisease
 
-rmsk_hg38_*.bed files were created by running:
+*rmsk_hg38_*.bed* files were created by running:
 ```
 python3 split_repeatmasker.py rmsk.txt rmsk_hg38
 ```
-and modelled after https://github.com/nf-core/test-datasets/blob/raredisease/reference/mobile_element_references.tsv
+*mobile_element_hg38_references.tsv* was modelled after https://github.com/nf-core/test-datasets/blob/raredisease/reference/mobile_element_references.tsv
 
-(a gzipped) rmsk.txt wad downloaded from [UCSC](https://hgdownload.cse.ucsc.edu/goldenpath/hg38/database/) on Jul 21st 2025.
+(a gzipped) *rmsk.txt* wad downloaded from [UCSC](https://hgdownload.cse.ucsc.edu/goldenpath/hg38/database/) on Jul 21st 2025.
 
 No of occurences in the raw file:
 
-SINE/Alu,1282821 - COVERED
-LINE/L1,1031524 - COVERED
+SINE/Alu,1282821 (INCLUDED)
+LINE/L1,1031524 (INCLUDED)
 Simple_repeat/Simple_repeat,724562
-SINE/MIR,616589 - COVERED
-LINE/L2,486431 - COVERED
-LTR/ERVL-MaLR,367470 - COVERED
+SINE/MIR,616589 (INCLUDED)
+LINE/L2,486431 (INCLUDED)
+LTR/ERVL-MaLR,367470 (INCLUDED)
 DNA/hAT-Charlie,270942
-LTR/ERV1,187201 - COVERED
-LTR/ERVL,171950 - COVERED
+LTR/ERV1,187201 (INCLUDED)
+LTR/ERVL,171950 (INCLUDED)
 DNA/TcMar-Tigger,123237
 Low_complexity/Low_complexity,106053
 LINE/CR1,69603
@@ -27,12 +27,12 @@ DNA/hAT-Blackjack,20062
 LTR/Gypsy,17427
 DNA/TcMar-Mariner,16871
 LINE/RTE-X,15944
-LTR/ERVK,11903 - COVERED
+LTR/ERVK,11903 (INCLUDED)
 LINE/RTE-BovB,9297
 DNA/hAT,8888
 DNA/TcMar-Tc2,8479
 LTR/Gypsy?,7548
-Retroposon/SVA,5974 - COVERED
+Retroposon/SVA,5974 (INCLUDED)
 LTR?/LTR?,5777
 Unknown/Unknown,5732
 SINE/tRNA-RTE,5695
@@ -44,7 +44,7 @@ DNA?/DNA?,3339
 Satellite/centr,3008
 SINE/5S-Deu-L2,2588
 DNA/DNA,2430
-LTR/ERVL?,2326 - COVERED
+LTR/ERVL?,2326 (INCLUDED)
 SINE/tRNA,2295
 DNA/PiggyBac,2253
 tRNA/tRNA,2164
@@ -55,7 +55,7 @@ RC/Helitron,1820
 srpRNA/srpRNA,1745
 DNA/hAT?,1543
 scRNA/scRNA,1484
-LTR/ERV1?,1288 - COVERED
+LTR/ERV1?,1288 (INCLUDED)
 LINE/Penelope,1128
 RNA/RNA,721
 SINE/tRNA-Deu,643
